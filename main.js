@@ -10,11 +10,36 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+let vowels = ["a", "e", "i", "o", "u"];
+let newWord = "";
+let newString = "";
 
-const pigLatin = (word) => {
 
-  // Your code here
+const getPigLatinConsonant = (newWord) => {
+  let myArr = [];
+  for (let i = 0; i < newWord.length; i++) {
+    if(vowels.indexOf(newWord[i]) >= 0) {
+      return newString + myArr.join("") + "ay";
+    } else {
+      myArr.push(newWord[i]);
+      newString = newWord.slice(i+1);
+    }
+  }
+}
 
+const pigLatin = (input) => {
+  let inputLowercase = input.toLowerCase().trim();
+  let inputArray = inputLowercase.split(" ");
+  
+  for (let i = 0; i < inputArray.length; i++) {
+    let word = inputArray[i];
+    if (vowels.includes(word.charAt(0))) {
+      inputArray[i] =  word + "yay";
+    } else {
+      inputArray[i] =  getPigLatinConsonant(word);
+    }
+  }
+  return inputArray.join(" ");
 }
 
 // the first function called in the program to get an input from the user
@@ -48,6 +73,9 @@ if (typeof describe === 'function') {
     it('should lowercase and trim word before translation', () => {
       assert.equal(pigLatin('HeLlO '), 'ellohay');
       assert.equal(pigLatin(' RoCkEt'), 'ocketray');
+    });
+    it('checks for multiple words', () => {
+      assert.equal(pigLatin('HeLlO RoCkEt'), 'ellohay ocketray');
     });
   });
 } else {
