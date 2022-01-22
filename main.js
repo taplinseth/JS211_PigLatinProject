@@ -11,7 +11,6 @@ const rl = readline.createInterface({
 });
 
 let vowels = ["a", "e", "i", "o", "u"];
-let newWord = "";
 let newString = "";
 
 

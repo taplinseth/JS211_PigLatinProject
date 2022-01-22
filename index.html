@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="main.js"></script>
+    <script src="pigLatinLogic.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Pig Latin</h1>
     <hr/>
     <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
+    <button onclick="pigLatin()">Pig Latin</button>
+    <input id="save-input" type="text" oninput="saveInput(this.value)">
+    <p></p>
+    <div id="myDIV">
+    </div>
     <hr/>
   </body>
 </html>

@@ -1,5 +1,4 @@
 let vowels = ["a", "e", "i", "o", "u"];
-let newWord = "";
 let newString = "";
 let input = "";
 
@@ -40,7 +39,11 @@ const pigLatin = () => {
   }
   let translation = inputArray.join(" ");
   console.log(translation);
-  let element = document.createElement('div');
-  element.appendChild(document.createTextNode(translation));
+
+  const para = document.createElement("p");
+  para.innerHTML = translation;
+  document.getElementById("myDIV").appendChild(para);
+
+
 
 }
