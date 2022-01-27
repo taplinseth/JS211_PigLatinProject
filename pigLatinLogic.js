@@ -7,12 +7,6 @@ const saveInput = (userInput) => {
   console.log(input);
 }
 
-const translation = (pigLatinWord) => {
-  let element = document.createElement('div');
-  element.innerText = pigLatinWord;
-  document.body.appendChild(element);
-}
-
 const getPigLatinConsonant = (newWord) => {
   let myArr = [];
   for (let i = 0; i < newWord.length; i++) {
